@@ -8,10 +8,8 @@ import { getAllCourses } from "@content/courses/fetcher";
 import { useWeb3 } from "@components/providers";
 
 export default function Home({courses}) {
-  const { web3, isLoading } = useWeb3()
   return (
     <>
-      { isLoading ? "IS Loading Web3..." : web3 ? "Web3 Ready!" : "Please install Metamask" }
       <Hero />
       <CourseList 
         courses={courses} 
