@@ -4,13 +4,13 @@ import { useWeb3 } from "@components/providers"
 import { Button } from "components/ui/common"
 import { useAccount } from "@components/hooks/web3/useAccount"
 // import { useAccount } from "@components/providers/web3/hooks/useAccount";
-// import { useRouter } from "next/router"
+import { useRouter } from "next/router"
 
 export default function Footer() {
   const { connect, isLoading, isWeb3Loaded } = useWeb3()
   const { account } = useAccount()
+  const { pathname } = useRouter()
   // const { account } = useAccount(web3)()
-    // const router = useRouter()
     return (
       <section>
         <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
@@ -56,6 +56,7 @@ export default function Footer() {
           </nav>
         </div>
         { account.data && 
+          !pathname.includes("/marketplace") &&
           <div className="flex justify-end pt-1 sm:px-6 lg:px-8">
             <div className="text-white bg-indigo-600 rounded-md p-2">
               {account.data}
