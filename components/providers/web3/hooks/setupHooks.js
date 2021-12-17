@@ -13,6 +13,6 @@ export const setupHooks = (...deps) => {
 
     return {
         useAccount: createAccountHook(...deps),
-        useAccount: createNetworkHook(...deps)
+        useNetwork: createNetworkHook(...deps)
     }
 }
