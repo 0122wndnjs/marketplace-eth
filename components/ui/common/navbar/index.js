@@ -40,7 +40,7 @@ export default function Footer() {
                   : isWeb3Loaded ?
                   account.data ?
                   <Button hoverable={false} className="cursor-default">
-                      Hi there
+                      Hi there {account.isAdmin && "Admin"}
                   </Button> :
                   <Button
                     onClick={connect}>
