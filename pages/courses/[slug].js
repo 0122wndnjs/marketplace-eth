@@ -1,42 +1,47 @@
-import { CourseHero, Keypoints, Curriculum } from "@components/ui/course";
 import { Modal } from "@components/ui/common";
+import {
+  CourseHero,
+  Curriculum,
+  Keypoints
+} from "@components/ui/course";
 import { BaseLayout } from "@components/ui/layout";
 import { getAllCourses } from "@content/courses/fetcher";
 
 export default function Course({course}) {
-  
-    return (
-      <>
+
+  return (
+    <>
       <div className="py-4">
-        <CourseHero 
+        <CourseHero
           title={course.title}
           description={course.description}
           image={course.coverImage}
         />
       </div>
-        <Keypoints 
-          points={course.wsl}
-        />
-        <Curriculum 
-          locked={true}
-        />
-        <Modal />
-      </>
-    )
+      <Keypoints
+        points={course.wsl}
+      />
+      <Curriculum
+        locked={true}
+      />
+      <Modal />
+    </>
+  )
 }
 
 export function getStaticPaths() {
-    const { data } = getAllCourses()
+  const { data } = getAllCourses()
 
-    return {
-        paths: data.map(c => ({
-            params: {
-                slug: c.slug
-            }
-        })),
-        fallback: false
-    }
+  return {
+    paths: data.map(c => ({
+      params: {
+        slug: c.slug
+      }
+    })),
+    fallback: false
+  }
 }
+
 
 export function getStaticProps({params}) {
   const { data } = getAllCourses()
@@ -45,7 +50,7 @@ export function getStaticProps({params}) {
   return {
     props: {
       course
-    } 
+    }
   }
 }
 

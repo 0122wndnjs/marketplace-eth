@@ -1,18 +1,15 @@
 
-import { Hero, BreadCrumbs } from "@components/ui/common"
-import { EthRates, WalletBar } from "@components/ui/web3";
-import { CourseList } from "@components/ui/course";
-import { OrderCard } from "@components/ui/order";
-import { BaseLayout } from "@components/ui/layout";
-import { getAllCourses } from "@content/courses/fetcher";
-import { useWeb3 } from "@components/providers";
+import { Hero } from "@components/ui/common"
+import { CourseList } from "@components/ui/course"
+import { BaseLayout } from "@components/ui/layout"
+import { getAllCourses } from "@content/courses/fetcher"
 
 export default function Home({courses}) {
   return (
     <>
       <Hero />
-      <CourseList 
-        courses={courses} 
+      <CourseList
+        courses={courses}
       />
     </>
   )
@@ -23,7 +20,7 @@ export function getStaticProps() {
   return {
     props: {
       courses: data
-    } 
+    }
   }
 }
 
