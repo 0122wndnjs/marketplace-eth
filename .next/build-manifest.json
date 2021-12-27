@@ -28,11 +28,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/marketplace.js"
-    ],
-    "/marketplace/courses/manage": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/marketplace/courses/manage.js"
     ]
   },
   "ampFirstPages": []
