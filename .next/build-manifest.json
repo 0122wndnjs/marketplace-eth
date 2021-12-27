@@ -14,11 +14,6 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
-    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -34,10 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/marketplace.js"
     ],
-    "/marketplace/courses/owned": [
+    "/marketplace/courses/manage": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/marketplace/courses/owned.js"
+      "static/chunks/pages/marketplace/courses/manage.js"
     ]
   },
   "ampFirstPages": []
