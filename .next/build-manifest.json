@@ -29,10 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/marketplace": [
+    "/hooks": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/marketplace.js"
+      "static/chunks/pages/hooks.js"
     ]
   },
   "ampFirstPages": []
