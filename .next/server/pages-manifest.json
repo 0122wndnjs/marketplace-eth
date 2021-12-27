@@ -3,5 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/marketplace": "pages/marketplace.js",
-  "/hooks": "pages/hooks.js"
+  "/": "pages/index.js",
+  "/marketplace/courses/owned": "pages/marketplace/courses/owned.js"
 }
