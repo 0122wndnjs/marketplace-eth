@@ -25,7 +25,7 @@ const createFormState = ({price, email, confirmationEmail}, hasAgreedTOS) => {
     return _createFormState()
 }
 
-export default function OrderModal({course, onClose}) {
+export default function OrderModal({course, onClose, onSubmit}) {
     const [isOpen, setIsOpen] = useState(false)
     const [order, setOrder] = useState(defaultOrder)
     const [enablePrice, setEnablePrice] = useState(false)
@@ -151,7 +151,7 @@ export default function OrderModal({course, onClose}) {
                         <span>I accept Eincode &apos;terms of service&apos; and I agree that my order can be rejected in the case data provided above are not correct</span>
                     </div>
                     { formState.message &&
-                        <div className="p-4 my-3 text-red-700 bg-red-200 rounded-lg text-sm">
+                        <div className="p-4 my-3 text-yellow-700 bg-yellow-200 rounded-lg text-sm">
                             { formState.message }
                         </div>
                     }
@@ -162,7 +162,7 @@ export default function OrderModal({course, onClose}) {
                 <Button 
                     disabled={formState.isDisabled}
                     onClick={() => {
-                        alert(JSON.stringify(order))
+                        onSubmit(order)
                 }}>
                     Submit
                 </Button>
