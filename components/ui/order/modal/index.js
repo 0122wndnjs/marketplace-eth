@@ -11,13 +11,15 @@ const defaultOrder = {
 // helper function
 const _createFormState = (isDisabled = false, message = "") => ({isDisabled, message})
 
-const createFormState = ({price, email, confirmationEmail}) => {
+const createFormState = ({price, email, confirmationEmail}, hasAgreedTOS) => {
     if (!price || Number(price) <= 0) {
         return _createFormState(true, "Price is not Valid")
     } else if (confirmationEmail.length === 0 || email.length === 0) {
         return _createFormState(true)
     } else if (email !== confirmationEmail) {
         return _createFormState(true, "Emails are not matching.")
+    } else if (!hasAgreedTOS) {
+        return _createFormState(true, "You need to agree with terms of service in order to submit the form")
     }
 
     return _createFormState()
@@ -27,6 +29,7 @@ export default function OrderModal({course, onClose}) {
     const [isOpen, setIsOpen] = useState(false)
     const [order, setOrder] = useState(defaultOrder)
     const [enablePrice, setEnablePrice] = useState(false)
+    const [hasAgreedTOS, setHasAgreedTOS] = useState(false)
     const { eth } = useEthPrice()
 
     useEffect(() => {
@@ -42,10 +45,12 @@ export default function OrderModal({course, onClose}) {
     const closeModal = () => {
         setIsOpen(false)
         setOrder(defaultOrder)
+        setEnablePrice(false)
+        setHasAgreedTOS(false)
         onClose()
     }
 
-    const formState = createFormState(order)
+    const formState = createFormState(order, hasAgreedTOS)
 
     return (
         <Modal isOpen={isOpen}>
@@ -136,6 +141,10 @@ export default function OrderModal({course, onClose}) {
                     <div className="text-xs text-gray-700 flex">
                         <label className="flex items-center mr-2">
                         <input
+                            checked={hasAgreedTOS}
+                            onChange={({target: {checked}}) => {
+                                setHasAgreedTOS(checked)
+                            }}
                             type="checkbox"
                             className="form-checkbox" />
                         </label>
