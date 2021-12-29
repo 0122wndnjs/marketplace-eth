@@ -47,7 +47,7 @@ export default function Marketplace({courses}) {
       ).send({from: account.data, value})
       console.log(result)
     } catch {
-      console.log("Purchase course: Operation has failed.")
+      console.error("Purchase course: Operation has failed.")
     }
   }
 
