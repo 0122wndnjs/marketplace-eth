@@ -24,10 +24,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/marketplace/courses/manage": [
+    "/marketplace": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/marketplace/courses/manage.js"
+      "static/chunks/pages/marketplace.js"
     ]
   },
   "ampFirstPages": []
