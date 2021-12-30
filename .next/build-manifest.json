@@ -29,11 +29,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/courses/[slug].js"
     ],
-    "/marketplace/courses/manage": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/marketplace/courses/manage.js"
-    ],
     "/marketplace/courses/owned": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

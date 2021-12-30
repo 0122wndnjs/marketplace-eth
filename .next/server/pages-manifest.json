@@ -3,6 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/marketplace/courses/owned": "pages/marketplace/courses/owned.js",
-  "/marketplace/courses/manage": "pages/marketplace/courses/manage.js",
   "/courses/[slug]": "pages/courses/[slug].js"
 }
