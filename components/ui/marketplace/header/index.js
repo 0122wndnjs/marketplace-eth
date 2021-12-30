@@ -2,7 +2,7 @@ import { WalletBar, EthRates } from "@components/ui/web3";
 import { Breadcrumbs } from "@components/ui/common";
 
 const LINKS = [{
-    href: "/",
+    href: "/marketplace",
     value: "Buy"
 }, {
     href: "/marketplace/courses/owned",
