@@ -27,7 +27,7 @@ export const handler = (web3, provider) => () => {
   useEffect(() => {
 
     const mutator = accounts => mutate(accounts[0] ?? null)
-    provider.on("accountsChanged", mutator)
+    provider?.on("accountsChanged", mutator)
 
     return () => {
       provider?.removeListener("accountsChanged", mutator)
