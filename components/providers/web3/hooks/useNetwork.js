@@ -28,10 +28,20 @@ export const handler = (web3, provider) => () => {
     }
   )
 
+  // useEffect(() => {
+  //   provider &&
+  //   provider.on("chainChanged", chainId => {mutate(NETWORKS[parseInt(chainId, 16)])})
+  // }, [web3])
+
   useEffect(() => {
-    provider &&
-    provider.on("chainChanged", chainId => {mutate(NETWORKS[parseInt(chainId, 16)])})
-  }, [web3])
+
+    const mutator = chainId => mmutate(NETWORKS[parseInt(chainId, 16)])
+    provider.on("chainChanged", mutator)
+
+    return () => {
+      provider?.removeListener("chainChanged", mutator)
+    }
+  }, [provider])
 
   return {
       data,
