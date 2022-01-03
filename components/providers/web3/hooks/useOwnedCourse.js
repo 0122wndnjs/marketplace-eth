@@ -15,7 +15,7 @@ export const handler = (web3, contract) => (course, account) => {
         return null
     }
 
-      return normalizeOwnedCourse(web)(course, ownedCourse)
+      return normalizeOwnedCourse(web3)(course, ownedCourse)
     }
   )
 
