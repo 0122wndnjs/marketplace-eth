@@ -3,9 +3,10 @@ import { BaseLayout } from "@components/ui/layout";
 import { OwnedCourseCard, CourseFilter } from "@components/ui/course";
 import { Button } from "@components/ui/common";
 import { useManagedCourses, useAccount } from "@components/hooks/web3";
+import ManagedCourseCard from "@components/ui/course/card/Managed";
 
 
-export default function ManageCourses() {
+export default function ManagedCourses() {
 
     const { account } = useAccount()
     const { managedCourses } = useManagedCourses(account.data)
@@ -16,7 +17,11 @@ export default function ManageCourses() {
             <MarketHeader />
             <CourseFilter />
             <section className="grid grid-cols-1">
-            {/* <OwnedCourseCard>
+            { managedCourses.data?.map(course =>
+                <ManagedCourseCard
+                    key={course.OwnedCourseId}
+                    course={course}
+                >
                 <div className="flex mr-2 relative rounded-md">
                     <input
                     type="text"
@@ -28,10 +33,11 @@ export default function ManageCourses() {
                     Verify
                     </Button>
                 </div>
-            </OwnedCourseCard> */}
+                </ManagedCourseCard>
+            )}
             </section>
         </>
     )
 }
 
-ManageCourses.Layout = BaseLayout
+ManagedCourses.Layout = BaseLayout
