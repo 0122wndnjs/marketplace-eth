@@ -29,10 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/marketplace.js"
     ],
-    "/marketplace/courses/managed": [
+    "/marketplace/courses/owned": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/marketplace/courses/managed.js"
+      "static/chunks/pages/marketplace/courses/owned.js"
     ]
   },
   "ampFirstPages": []
