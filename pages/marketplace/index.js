@@ -3,7 +3,7 @@ import { CourseList, CourseCard } from "@components/ui/course"
 import { BaseLayout } from "@components/ui/layout"
 import { getAllCourses } from "@content/courses/fetcher"
 import { useWalletInfo, useOwnedCourses } from "@components/hooks/web3"
-import { Button, Loader } from "@components/ui/common"
+import { Button, Loader, Message } from "@components/ui/common"
 import { OrderModal } from "@components/ui/order"
 import { useState } from "react"
 import { MarketHeader } from "@components/ui/marketplace";
@@ -100,9 +100,28 @@ export default function Marketplace({courses}) {
 
               if (owned) {
                 return (
-                  <Button disabled={true} variant="green">
-                    Owned
-                  </Button>
+                  <>
+                    <Button disabled={true} variant="green">
+                      Owned
+                    </Button>
+                    <div className="mt-1">
+                      { owned.state === "activated" &&
+                        <Message size="sm">
+                          Activated
+                        </Message>
+                      }
+                      { owned.state === "deactivated" &&
+                        <Message type="danger" size="sm">
+                          Deactivated
+                        </Message>
+                      }
+                      { owned.state === "purchased" &&
+                        <Message type="warning" size="sm">
+                          Waiting for Activation
+                        </Message>
+                      }
+                    </div>
+                  </>
                 )
               }
 
