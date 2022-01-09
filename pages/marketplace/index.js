@@ -15,6 +15,7 @@ export default function Marketplace({courses}) {
   const [selectedCourse, setSelectedCourse] = useState(null)
   const { hasConnectedWallet, isConnecting, account } = useWalletInfo()
   const { ownedCourses } = useOwnedCourses(courses, account.data)
+  const [isNewPurchase, setIsNewPurchase] = useState(true)
 
   const purchaseCourse = async order => {
 
@@ -110,7 +111,14 @@ export default function Marketplace({courses}) {
                         </Button>
                         { owned.state === "deactivated" &&
                         <div className="ml-1">
-                          <Button disabled={false} size="sm" onClick={() => alert("Re-activating")} variant="purple">
+                          <Button 
+                            isabled={false} 
+                            size="sm" 
+                            onClick={() => {
+                              setIsNewPurchase(false)
+                              setSelectedCourse(course)
+                            }} 
+                            variant="purple">
                             Fund to Activate
                           </Button>
                           </div>
@@ -138,8 +146,12 @@ export default function Marketplace({courses}) {
       { selectedCourse &&
         <OrderModal 
           course={selectedCourse}
+          isNewPurchase={isNewPurchase}
           onSubmit={purchaseCourse}
-          onClose={() => setSelectedCourse(null)}
+          onClose={() => {
+            setSelectedCourse(null)
+            setIsNewPurchase(true)
+          }}
         />
       }
     </>
