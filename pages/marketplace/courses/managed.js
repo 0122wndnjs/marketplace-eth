@@ -103,18 +103,12 @@ export default function ManagedCourses() {
         setSearchedCourse(null)
     }
 
-    if (!account.isAdmin) {
-        return null
-    }
+    const renderCard = (course, isSearched) => {
 
-    return (
-        <>
-            <MarketHeader />
-            <CourseFilter onSearchSubmit={serachCourse} />
-            <section className="grid grid-cols-1">
-            { managedCourses.data?.map(course =>
-                <ManagedCourseCard
+        return (
+            <ManagedCourseCard
                     key={course.OwnedCourseId}
+                    isSearched={isSearched}
                     course={course}
                 >
                 <VerificationInput 
@@ -146,8 +140,27 @@ export default function ManagedCourses() {
                     </Button>
                 </div>
                 }
-                </ManagedCourseCard>
-            )}
+            </ManagedCourseCard>
+        )
+    }
+
+    if (!account.isAdmin) {
+        return null
+    }
+
+    return (
+        <>
+            <MarketHeader />
+            <CourseFilter onSearchSubmit={serachCourse} />
+            <section className="grid grid-cols-1">
+            { searchedCourse &&
+                <div>
+                    <h1 className="text-2xl font-bold p-5">Search</h1>
+                    { renderCard(searchedCourse, true) }
+                </div>
+            }
+            <h1 className="text-2xl font-bold p-5">All Courses</h1>
+            { managedCourses.data?.map(course => renderCard(course)) }
             </section>
         </>
     )
