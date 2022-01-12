@@ -46,9 +46,9 @@ export default function Marketplace({courses}) {
         { type: "bytes32", value: orderHash }
       )
 
-      _purchaseCourse(hexCourseId, proof, value)
+      withToast(_purchaseCourse(hexCourseId, proof, value))
     } else {
-      _repurchaseCourse(orderHash, value)
+      withToast(_repurchaseCourse(orderHash, value))
     }
   }
 
@@ -58,9 +58,10 @@ export default function Marketplace({courses}) {
         hexCourseId,
         proof
       ).send({from: account.data, value})
-      console.log(result)
-    } catch {
-      console.error("Purchase course: Operation has failed.")
+        return result
+    } catch(error) {
+      throw new Error(error.message)
+      // console.error("Purchase course: Operation has failed.")
     }
   }
 
@@ -69,27 +70,28 @@ export default function Marketplace({courses}) {
       const result = await contract.methods.repurchaseCourse(
         courseHash
       ).send({from: account.data, value})
-      console.log(result)
-    } catch {
-      console.error("Purchase course: Operation has failed.")
+        return result
+    } catch(error) {
+      throw new Error(error.message)
+      // console.error("Purchase course: Operation has failed.")
     }
   }
 
-  const notify = () => {
-    // const resolveWithSomeData = new Promise(resolve => setTimeout(() => resolve({
-    //   transactionHash: "0x760b8aa1ee8c4ac57513564e2d202d828d7e6913e3196dc20d8de8c2fd1a7821"
-    // }), 3000));
-    const resolveWithSomeData = new Promise((resolve, reject) => setTimeout(() => reject(new Error("Some Error")), 3000));
+  // const notify = () => {
+  //   // const resolveWithSomeData = new Promise(resolve => setTimeout(() => resolve({
+  //   //   transactionHash: "0x760b8aa1ee8c4ac57513564e2d202d828d7e6913e3196dc20d8de8c2fd1a7821"
+  //   // }), 3000));
+  //   const resolveWithSomeData = new Promise((resolve, reject) => setTimeout(() => reject(new Error("Some Error")), 3000));
 
-    withToast(resolveWithSomeData)
-  }
+  //   withToast(resolveWithSomeData)
+  // }
 
   return (
     <>
       <MarketHeader />
-      <Button onClick={notify}>
+      {/* <Button onClick={notify}>
         Notify!
-       </Button>
+       </Button> */}
       <CourseList
         courses={courses}
       >
