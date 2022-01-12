@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/vLrKekZFBAs4z_r9gI1QF/_buildManifest.js",
-    "static/vLrKekZFBAs4z_r9gI1QF/_ssgManifest.js"
+    "static/09egcKfVcEbyUcSCvzj1k/_buildManifest.js",
+    "static/09egcKfVcEbyUcSCvzj1k/_ssgManifest.js"
   ],
   "pages": {
     "/": [
@@ -15,14 +15,14 @@
       "static/chunks/main-78f18827d8a64b55d17c.js",
       "static/chunks/061e6b60-9bbabe7a318d48b784f4.js",
       "static/chunks/577-bb4f21b63a90533c9ffb.js",
-      "static/chunks/726-f39927a49333becc6916.js",
+      "static/chunks/726-50d5165af8d36dc3563f.js",
       "static/chunks/pages/index-1e2e9ef1f3f15007cb17.js"
     ],
     "/_app": [
       "static/chunks/webpack-6cca8f10f816799d8144.js",
       "static/chunks/framework-925f8b290ee4a52af3fc.js",
       "static/chunks/main-78f18827d8a64b55d17c.js",
-      "static/css/adbd4196f5d20dae2edc.css",
+      "static/css/42be002584172919c032.css",
       "static/chunks/pages/_app-3bbf232b40d50186467c.js"
     ],
     "/_error": [
@@ -37,7 +37,7 @@
       "static/chunks/main-78f18827d8a64b55d17c.js",
       "static/chunks/061e6b60-9bbabe7a318d48b784f4.js",
       "static/chunks/577-bb4f21b63a90533c9ffb.js",
-      "static/chunks/726-f39927a49333becc6916.js",
+      "static/chunks/726-50d5165af8d36dc3563f.js",
       "static/chunks/pages/courses/[slug]-e10b32e3512dfc0f1a11.js"
     ],
     "/hooks": [
@@ -52,7 +52,7 @@
       "static/chunks/main-78f18827d8a64b55d17c.js",
       "static/chunks/061e6b60-9bbabe7a318d48b784f4.js",
       "static/chunks/577-bb4f21b63a90533c9ffb.js",
-      "static/chunks/726-f39927a49333becc6916.js",
+      "static/chunks/726-50d5165af8d36dc3563f.js",
       "static/chunks/pages/marketplace-ba5416317c41d182cb34.js"
     ],
     "/marketplace/courses/managed": [
@@ -61,7 +61,7 @@
       "static/chunks/main-78f18827d8a64b55d17c.js",
       "static/chunks/061e6b60-9bbabe7a318d48b784f4.js",
       "static/chunks/577-bb4f21b63a90533c9ffb.js",
-      "static/chunks/726-f39927a49333becc6916.js",
+      "static/chunks/726-50d5165af8d36dc3563f.js",
       "static/chunks/pages/marketplace/courses/managed-a824efb83ae618d932bb.js"
     ],
     "/marketplace/courses/owned": [
@@ -70,7 +70,7 @@
       "static/chunks/main-78f18827d8a64b55d17c.js",
       "static/chunks/061e6b60-9bbabe7a318d48b784f4.js",
       "static/chunks/577-bb4f21b63a90533c9ffb.js",
-      "static/chunks/726-f39927a49333becc6916.js",
+      "static/chunks/726-50d5165af8d36dc3563f.js",
       "static/chunks/pages/marketplace/courses/owned-a89d23513f68098b0e88.js"
     ]
   },
